@@ -1,0 +1,13 @@
+# Configuración para Render.com
+services:
+  - type: web
+    name: pdf-to-jpg-converter
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: SECRET_KEY
+        value: cc047147136cc646a1f0c57d689d1165dd1bafbf70d6b3201be4435ad11ce08d
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_DEBUG
+        value: False
