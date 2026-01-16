@@ -1,0 +1,14 @@
+# Configuración para Railway/Nixpacks
+# Instala poppler-utils que es necesario para pdf2image
+
+[phases.setup]
+nixPkgs = ["poppler_utils"]
+
+[phases.install]
+cmds = ["pip install -r requirements.txt"]
+
+[phases.build]
+cmds = ["echo 'Build complete'"]
+
+[start]
+cmd = "gunicorn app:app"
