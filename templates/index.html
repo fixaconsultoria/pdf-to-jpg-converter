@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convierte archivos PDF a imágenes JPG online de forma gratuita. Convierte cada página de tu PDF en imágenes JPG de alta calidad. Sin registro, rápido y seguro.">
+    <meta name="keywords" content="convertir pdf a jpg, pdf a imagen, pdf to jpg, convertir pdf online, pdf a jpg gratis">
+    <meta name="robots" content="index, follow">
+    <title>Convertir PDF a JPG Online - Gratis y Rápido</title>
+    
+    <!-- Estructura lista para Google AdSense (descomentar cuando se tenga el código) -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script> -->
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Convertir PDF a JPG Online</h1>
+            <p class="subtitle">Convierte tus archivos PDF a imágenes JPG de forma gratuita, rápida y segura</p>
+        </header>
+
+        <main>
+            <div class="tool-container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <svg class="upload-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <h2>Arrastra tu archivo PDF aquí</h2>
+                        <p>o haz clic para seleccionar</p>
+                        <p class="file-info">Tamaño máximo: 20 MB</p>
+                    </div>
+                    <input type="file" id="fileInput" accept=".pdf" hidden>
+                </div>
+
+                <div class="progress-container" id="progressContainer" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">Procesando...</p>
+                </div>
+
+                <div class="result-container" id="resultContainer" style="display: none;">
+                    <div class="success-message">
+                        <svg class="success-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <h3>¡Conversión completada!</h3>
+                        <p>Tu archivo ZIP está listo para descargar</p>
+                        <button class="btn-download" id="downloadBtn">Descargar ZIP</button>
+                    </div>
+                </div>
+
+                <div class="error-container" id="errorContainer" style="display: none;">
+                    <div class="error-message">
+                        <svg class="error-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <h3>Error al procesar</h3>
+                        <p id="errorMessage"></p>
+                        <button class="btn-retry" id="retryBtn">Intentar de nuevo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h2>¿Cómo funciona?</h2>
+                <ol class="steps-list">
+                    <li>Selecciona o arrastra tu archivo PDF</li>
+                    <li>Espera a que se procese la conversión</li>
+                    <li>Descarga el archivo ZIP con todas las imágenes JPG</li>
+                </ol>
+
+                <h2>Características</h2>
+                <ul class="features-list">
+                    <li>✅ Conversión de alta calidad (200 DPI)</li>
+                    <li>✅ Soporta PDFs de múltiples páginas</li>
+                    <li>✅ Sin límite de páginas</li>
+                    <li>✅ Sin registro necesario</li>
+                    <li>✅ Procesamiento rápido y seguro</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <div class="legal-info">
+                <h3>Información Legal y Privacidad</h3>
+                <p>
+                    Todos los archivos subidos se procesan de forma automática y se eliminan 
+                    inmediatamente después de la conversión o después de 10 minutos si no se descargan. 
+                    No almacenamos ni compartimos tus archivos con terceros. Esta herramienta es 
+                    gratuita y no requiere registro.
+                </p>
+                <p class="copyright">
+                    © 2024 - Herramienta de Conversión PDF a JPG
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

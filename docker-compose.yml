@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - SECRET_KEY=${SECRET_KEY:-dev-secret-key-change-in-production}
+      - FLASK_ENV=production
+      - FLASK_DEBUG=False
+    volumes:
+      # Montar carpetas para persistencia (opcional)
+      - ./app/uploads:/app/app/uploads
+      - ./app/outputs:/app/app/outputs
+    restart: unless-stopped
+    # Límites de recursos (opcional)
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M

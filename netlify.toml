@@ -1,0 +1,11 @@
+# Configuración para Netlify (NOTA: Netlify NO es recomendado para esta app)
+# Ver explicación en NETLIFY_INFO.md
+
+[build]
+  command = "echo 'Netlify no soporta Flask directamente. Usa Railway, Render o VPS.'"
+  publish = "."
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
