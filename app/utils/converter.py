@@ -110,6 +110,7 @@ def pdf_to_png(pdf_path, output_folder, dpi=200):
 def jpg_to_pdf(jpg_paths, output_path):
     """
     Convierte múltiples imágenes JPG a un PDF.
+    Usa Pillow para crear el PDF.
     
     Args:
         jpg_paths: Lista de rutas de archivos JPG
@@ -119,38 +120,37 @@ def jpg_to_pdf(jpg_paths, output_path):
         str: Ruta del PDF creado
     """
     try:
-        from reportlab.pdfgen import canvas
-        from reportlab.lib.pagesizes import letter
-        from reportlab.lib.utils import ImageReader
-        
-        # Si reportlab no está disponible, usar Pillow
-        try:
-            images = []
-            for jpg_path in sorted(jpg_paths):
-                if os.path.exists(jpg_path):
+        images = []
+        for jpg_path in sorted(jpg_paths):
+            if os.path.exists(jpg_path):
+                try:
                     img = Image.open(jpg_path)
-                    # Convertir a RGB si es necesario
+                    # Convertir a RGB si es necesario (Pillow PDF requiere RGB)
                     if img.mode != 'RGB':
                         img = img.convert('RGB')
                     images.append(img)
-            
-            if not images:
-                raise Exception("No se encontraron imágenes válidas")
-            
-            # Guardar como PDF usando Pillow
-            if images:
-                images[0].save(
-                    output_path,
-                    'PDF',
-                    resolution=100.0,
-                    save_all=True,
-                    append_images=images[1:] if len(images) > 1 else []
-                )
-            
-            return output_path
-            
-        except ImportError:
-            raise Exception("Error: No se puede crear PDF. Se requiere Pillow.")
+                except Exception as e:
+                    raise Exception(f"Error al abrir imagen {os.path.basename(jpg_path)}: {str(e)}")
+        
+        if not images:
+            raise Exception("No se encontraron imágenes válidas")
+        
+        # Guardar como PDF usando Pillow
+        # Pillow puede crear PDFs directamente
+        if len(images) == 1:
+            # Una sola imagen
+            images[0].save(output_path, 'PDF', resolution=100.0)
+        else:
+            # Múltiples imágenes
+            images[0].save(
+                output_path,
+                'PDF',
+                resolution=100.0,
+                save_all=True,
+                append_images=images[1:]
+            )
+        
+        return output_path
     
     except Exception as e:
         # Eliminar PDF si se creó parcialmente
