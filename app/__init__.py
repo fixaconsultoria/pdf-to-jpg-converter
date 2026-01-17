@@ -33,13 +33,9 @@ def create_app():
     
     # Registrar blueprints (rutas)
     # Para agregar nuevas herramientas, crear un nuevo archivo en routes/ y registrarlo aquí
-    from app.routes import pdf_to_jpg
+    from app.routes import pdf_to_jpg, pdf_to_png, jpg_to_pdf
     app.register_blueprint(pdf_to_jpg.bp)
-    
-    # Ejemplo de cómo agregar más herramientas en el futuro:
-    # from app.routes import pdf_to_png
-    # app.register_blueprint(pdf_to_png.bp)
-    # from app.routes import jpg_to_pdf
-    # app.register_blueprint(jpg_to_pdf.bp)
+    app.register_blueprint(pdf_to_png.bp)
+    app.register_blueprint(jpg_to_pdf.bp)
     
     return app
