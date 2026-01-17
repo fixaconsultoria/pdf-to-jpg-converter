@@ -25,11 +25,21 @@ def create_app():
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     os.makedirs(app.config['OUTPUT_FOLDER'], exist_ok=True)
     
-    # Ruta principal (página de inicio)
+    # Rutas de páginas principales
     @app.route('/')
     def index():
         from flask import render_template
         return render_template('index.html')
+    
+    @app.route('/pdf-to-png')
+    def pdf_to_png_page():
+        from flask import render_template
+        return render_template('pdf_to_png.html')
+    
+    @app.route('/jpg-to-pdf')
+    def jpg_to_pdf_page():
+        from flask import render_template
+        return render_template('jpg_to_pdf.html')
     
     # Registrar blueprints (rutas)
     # Para agregar nuevas herramientas, crear un nuevo archivo en routes/ y registrarlo aquí
