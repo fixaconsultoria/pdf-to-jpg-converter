@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://pdfsimpleconvert.com/sitemap.xml
+
+# No indexar archivos temporales o API
+Disallow: /api/
+Disallow: /app/
