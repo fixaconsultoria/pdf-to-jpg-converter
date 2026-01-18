@@ -88,4 +88,15 @@ def create_app():
             mimetype='text/plain'
         )
     
+    # Ruta para ads.txt (requerido por Google AdSense)
+    @app.route('/ads.txt')
+    def ads_txt():
+        from flask import send_from_directory
+        import os
+        return send_from_directory(
+            os.path.join(base_dir, 'static'),
+            'ads.txt',
+            mimetype='text/plain'
+        )
+    
     return app
