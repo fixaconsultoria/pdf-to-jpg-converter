@@ -2,7 +2,7 @@
 Aplicación Flask principal.
 Configuración centralizada para facilitar la expansión con nuevas herramientas.
 """
-from flask import Flask, request, redirect, url_for
+from flask import Flask
 import os
 
 def create_app():
@@ -24,25 +24,6 @@ def create_app():
     # Crear carpetas si no existen
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     os.makedirs(app.config['OUTPUT_FOLDER'], exist_ok=True)
-    
-    # Middleware para forzar HTTPS y eliminar www (canonical URL)
-    @app.before_request
-    def force_https_and_remove_www():
-        """Redirige HTTP a HTTPS y www a sin www para SEO."""
-        # Solo en producción (cuando está desplegado)
-        if os.environ.get('FLASK_ENV') == 'production' or os.environ.get('RENDER'):
-            url = request.url
-            url_lower = url.lower()
-            
-            # Redirigir HTTP a HTTPS
-            if url.startswith('http://'):
-                url = url.replace('http://', 'https://', 1)
-                return redirect(url, code=301)
-            
-            # Redirigir www a sin www (canonical)
-            if 'www.pdfsimpleconvert.com' in url_lower:
-                url = url.replace('www.pdfsimpleconvert.com', 'pdfsimpleconvert.com')
-                return redirect(url, code=301)
     
     # Rutas de páginas principales (URLs SEO-friendly)
     @app.route('/')
