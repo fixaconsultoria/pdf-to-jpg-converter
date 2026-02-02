@@ -68,7 +68,12 @@ def create_app():
     def contact():
         from flask import render_template
         return render_template('contact.html')
-    
+
+    @app.route('/como-convertir-pdf')
+    def como_convertir_pdf():
+        from flask import render_template
+        return render_template('como_convertir_pdf.html')
+
     # Registrar blueprints (rutas)
     # Para agregar nuevas herramientas, crear un nuevo archivo en routes/ y registrarlo aquí
     from app.routes import pdf_to_jpg, pdf_to_png, jpg_to_pdf, sitemap
