@@ -12,8 +12,6 @@
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ url_for('static', filename='favicon.png') }}">
     
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
@@ -73,13 +71,16 @@
                     Siempre estamos abiertos a sugerencias para nuevas herramientas o mejoras en las existentes. Si tienes ideas para nuevas funcionalidades o formas de mejorar nuestro servicio, nos encantaría escucharlas.
                 </p>
 
-                <div style="background: var(--bg-secondary); padding: 30px; border-radius: var(--border-radius); margin-top: 30px; text-align: center;">
-                    <h3 style="color: var(--text-primary); margin-bottom: 15px;">Formulario de Contacto</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 20px;">
-                        Para contactarnos, por favor envía un email a: <strong>contacto@pdfsimpleconvert.com</strong>
+                <div style="background: var(--bg-secondary); padding: 30px; border-radius: var(--border-radius); margin-top: 30px; text-align: center; border: 2px solid var(--primary-color);">
+                    <h3 style="color: var(--text-primary); margin-bottom: 15px;">Correo de contacto</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 1.1rem;">
+                        Puedes escribirnos a la siguiente dirección de correo electrónico:
+                    </p>
+                    <p style="margin-bottom: 20px;">
+                        <a href="mailto:contacto@pdfsimpleconvert.com" style="color: var(--primary-color); font-size: 1.25rem; font-weight: 700; text-decoration: underline;">contacto@pdfsimpleconvert.com</a>
                     </p>
                     <p style="color: var(--text-secondary); font-size: 0.9rem;">
-                        Nota: Este es un servicio automatizado. Las respuestas pueden tardar hasta 48 horas.
+                        Revisamos todas las consultas. Las respuestas pueden tardar hasta 48 horas laborables.
                     </p>
                 </div>
             </div>
@@ -90,7 +91,8 @@
                 <nav style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-color);">
                     <a href="/privacy-policy" style="color: var(--text-secondary); text-decoration: underline; margin-right: 15px;">Política de Privacidad</a>
                     <a href="/terms" style="color: var(--text-secondary); text-decoration: underline; margin-right: 15px;">Términos de Servicio</a>
-                    <a href="/contact" style="color: var(--text-secondary); text-decoration: underline;">Contacto</a>
+                    <a href="/contact" style="color: var(--text-secondary); text-decoration: underline; margin-right: 15px;">Contacto</a>
+                    <a href="/como-convertir-pdf" style="color: var(--text-secondary); text-decoration: underline;">Cómo convertir PDF</a>
                 </nav>
                 <p class="copyright">
                     © 2024 - PDF Simple Convert - Herramientas de Conversión Online
