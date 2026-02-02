@@ -17,6 +17,7 @@ def sitemap():
         {'url': '/pdf-a-jpg', 'priority': '0.9', 'changefreq': 'weekly'},
         {'url': '/pdf-a-png', 'priority': '0.9', 'changefreq': 'weekly'},
         {'url': '/jpg-a-pdf', 'priority': '0.9', 'changefreq': 'weekly'},
+        {'url': '/como-convertir-pdf', 'priority': '0.8', 'changefreq': 'monthly'},
         {'url': '/privacy-policy', 'priority': '0.5', 'changefreq': 'monthly'},
         {'url': '/terms', 'priority': '0.5', 'changefreq': 'monthly'},
         {'url': '/contact', 'priority': '0.5', 'changefreq': 'monthly'},
