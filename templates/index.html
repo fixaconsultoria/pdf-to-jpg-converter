@@ -14,9 +14,6 @@
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ url_for('static', filename='favicon.png') }}">
     
-    <!-- Google AdSense - Reemplazar ca-pub-XXXXXXXXXX con tu Publisher ID real -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
-    
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
@@ -27,7 +24,8 @@
             <nav style="margin-top: 20px;">
                 <a href="/pdf-a-jpg" style="color: white; text-decoration: underline; margin-right: 15px;">PDF→JPG</a>
                 <a href="/pdf-a-png" style="color: white; text-decoration: underline; margin-right: 15px;">PDF→PNG</a>
-                <a href="/jpg-a-pdf" style="color: white; text-decoration: underline;">JPG→PDF</a>
+                <a href="/jpg-a-pdf" style="color: white; text-decoration: underline; margin-right: 15px;">JPG→PDF</a>
+                <a href="/como-convertir-pdf" style="color: white; text-decoration: underline;">Guía</a>
             </nav>
         </header>
 
@@ -79,89 +77,57 @@
                 </div>
             </div>
 
-            <!-- Google AdSense - Banner superior -->
-            <div class="ad-container" style="margin: 30px 0; text-align: center; min-height: 100px;">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-XXXXXXXXXX"
-                     data-ad-slot="XXXXXXXXXX"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
+            <div class="info-section" style="max-width: 800px; margin: 30px auto 0;">
+                <h2>Qué hace esta herramienta</h2>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px;">
+                    Esta herramienta convierte cada página de tu PDF en una imagen JPG independiente. Subes un solo archivo PDF y obtienes un ZIP con todas las páginas ya convertidas a JPG, listas para usar en redes sociales, correos o presentaciones. No hace falta instalar programas ni crear cuenta: todo se hace en el navegador en pocos segundos.
+                </p>
 
-            <div class="info-section">
-                <h2>Otras Herramientas Disponibles</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+                <h2>Para quién está pensada</h2>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px;">
+                    Está pensada para cualquier persona que necesite pasar un PDF a imágenes de forma ocasional o habitual: trabajadores que envían informes por correo, estudiantes que comparten apuntes, pequeños negocios que publican ofertas en redes, o cualquiera que prefiera no instalar software en su ordenador. La interfaz es mínima y directa para que el proceso sea rápido.
+                </p>
+
+                <h2>Casos de uso reales</h2>
+                <h3>Compartir en redes sociales</h3>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 15px;">
+                    Muchas redes no permiten subir PDFs directamente o no los muestran bien. Convirtiendo las páginas a JPG puedes publicar cada página como imagen, mantener la legibilidad y controlar el orden. Útil para promociones, menús, catálogos o tutoriales en una sola imagen.
+                </p>
+                <h3>Enviar por correo o mensajería</h3>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 15px;">
+                    Algunos clientes de correo o apps limitan el tamaño o el tipo de archivo. Un PDF convertido a JPG suele pesar menos por página y se abre en cualquier dispositivo sin necesidad de lector de PDF. Ideal para facturas, recibos o documentos de una o pocas páginas.
+                </p>
+                <h3>Insertar en presentaciones o documentos</h3>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px;">
+                    En PowerPoint, Google Slides o Word a veces es más cómodo insertar una imagen que un PDF embebido. Con esta herramienta extraes las páginas que necesitas en JPG y las usas donde quieras, manteniendo la calidad suficiente para pantalla.
+                </p>
+
+                <h2>Beneficios frente a otras opciones</h2>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px;">
+                    No hace falta instalar nada ni registrarse. Los archivos se procesan en el servidor solo para la conversión y se borran automáticamente tras la descarga o a los pocos minutos; no guardamos tus PDFs. La conversión se hace a 200 DPI para que las imágenes se vean nítidas en pantalla e impresión ligera. Si necesitas aún más calidad sin compresión, puedes usar nuestra herramienta <a href="/pdf-a-png" style="color: var(--primary-color);">PDF a PNG</a>.
+                </p>
+
+                <h2>Simplicidad, rapidez y privacidad</h2>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px;">
+                    El flujo es único: subir el PDF, esperar unos segundos y descargar el ZIP. No hay pasos extra ni opciones que configurar. La rapidez depende del tamaño del archivo y de tu conexión; para PDFs de tamaño normal suele ser cuestión de segundos. En cuanto a privacidad, no usamos tus archivos para nada más que la conversión y no compartimos datos con terceros para publicidad basada en tu uso de la herramienta.
+                </p>
+
+                <h2>Otras herramientas disponibles</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
                     <div style="padding: 20px; background: var(--bg-secondary); border-radius: var(--border-radius); border: 2px solid var(--primary-color);">
                         <h3 style="margin-bottom: 10px; color: var(--primary-color);">PDF → PNG</h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 15px;">Convierte PDFs a imágenes PNG sin compresión</p>
-                        <a href="/pdf-a-png" style="display: inline-block; padding: 10px 20px; background: var(--primary-color); color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">Usar Herramienta →</a>
+                        <p style="color: var(--text-secondary); margin-bottom: 15px;">Convierte PDFs a imágenes PNG sin compresión, ideal cuando necesitas máxima calidad.</p>
+                        <a href="/pdf-a-png" style="display: inline-block; padding: 10px 20px; background: var(--primary-color); color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">Usar herramienta</a>
                     </div>
                     <div style="padding: 20px; background: var(--bg-secondary); border-radius: var(--border-radius); border: 2px solid var(--primary-color);">
                         <h3 style="margin-bottom: 10px; color: var(--primary-color);">JPG → PDF</h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 15px;">Combina múltiples imágenes JPG en un PDF</p>
-                        <a href="/jpg-a-pdf" style="display: inline-block; padding: 10px 20px; background: var(--primary-color); color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">Usar Herramienta →</a>
+                        <p style="color: var(--text-secondary); margin-bottom: 15px;">Combina varias imágenes JPG en un solo PDF en el orden que elijas.</p>
+                        <a href="/jpg-a-pdf" style="display: inline-block; padding: 10px 20px; background: var(--primary-color); color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">Usar herramienta</a>
                     </div>
                 </div>
-
-                <h2>¿Qué es convertir PDF a JPG?</h2>
-                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px;">
-                    Convertir PDF a JPG es el proceso de transformar cada página de un documento PDF en una imagen JPG independiente. Esta herramienta online te permite extraer todas las páginas de tu PDF y guardarlas como archivos de imagen JPG de alta calidad, ideales para compartir, editar en programas de imagen, o usar en presentaciones y documentos.
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-top: 20px;">
+                    <a href="/como-convertir-pdf" style="color: var(--primary-color);">Guía completa: cómo convertir PDF e imágenes</a>
                 </p>
-
-                <h2>¿Para qué sirve convertir PDF a JPG?</h2>
-                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px;">
-                    Esta herramienta es perfecta para múltiples situaciones. Si necesitas extraer imágenes de un PDF para usar en un diseño gráfico, compartir páginas específicas en redes sociales, o convertir documentos escaneados en imágenes editables, nuestro convertidor PDF a JPG es la solución ideal. También es útil para crear miniaturas de documentos, convertir facturas o recibos en imágenes, o preparar contenido para impresión en formatos que requieren imágenes en lugar de PDFs.
-                </p>
-
-                <h2>Casos de uso comunes</h2>
-                <ul class="features-list" style="margin-bottom: 20px;">
-                    <li>📄 <strong>Extraer páginas de documentos:</strong> Convierte páginas específicas de un PDF en imágenes JPG para compartir o editar individualmente.</li>
-                    <li>🖼️ <strong>Preparar imágenes para diseño:</strong> Obtén imágenes de alta calidad desde PDFs para usar en programas como Photoshop, Illustrator o Canva.</li>
-                    <li>📱 <strong>Compartir en redes sociales:</strong> Convierte páginas de PDFs en imágenes optimizadas para Instagram, Facebook o Twitter.</li>
-                    <li>📧 <strong>Enviar por email:</strong> Transforma documentos PDF en imágenes JPG más ligeras y fáciles de enviar por correo electrónico.</li>
-                    <li>🖨️ <strong>Preparar para impresión:</strong> Convierte PDFs a JPG para impresoras o servicios de impresión que requieren formato de imagen.</li>
-                    <li>📚 <strong>Crear presentaciones:</strong> Extrae páginas de documentos o libros en PDF para incluir en presentaciones de PowerPoint o Google Slides.</li>
-                </ul>
-
-                <h2>¿Cómo funciona?</h2>
-                <ol class="steps-list">
-                    <li>Selecciona o arrastra tu archivo PDF directamente en la herramienta</li>
-                    <li>Espera a que se procese la conversión automáticamente</li>
-                    <li>Descarga el archivo ZIP con todas las imágenes JPG generadas</li>
-                </ol>
-
-                <h2>Características principales</h2>
-                <ul class="features-list">
-                    <li>✅ Conversión de alta calidad a 200 DPI para imágenes nítidas y profesionales</li>
-                    <li>✅ Soporta PDFs de múltiples páginas, convirtiendo cada página en una imagen separada</li>
-                    <li>✅ Sin límite de páginas, procesa documentos de cualquier tamaño</li>
-                    <li>✅ Completamente gratuito y sin necesidad de registro o creación de cuenta</li>
-                    <li>✅ Procesamiento rápido y seguro, tus archivos se eliminan automáticamente después de la conversión</li>
-                    <li>✅ Compatible con todos los navegadores modernos y dispositivos móviles</li>
-                    <li>✅ No requiere instalación de software, todo se procesa online en la nube</li>
-                </ul>
-
-                <h2>Ventajas de usar nuestra herramienta online</h2>
-                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px;">
-                    A diferencia de programas de escritorio que requieren instalación, nuestra herramienta de conversión PDF a JPG funciona completamente en tu navegador. No necesitas descargar software, crear cuentas, o preocuparte por actualizaciones. Simplemente sube tu PDF y obtén tus imágenes JPG en segundos. Todos los archivos se procesan de forma segura y se eliminan automáticamente para proteger tu privacidad. Es la forma más rápida, fácil y segura de convertir PDFs a imágenes JPG.
-                </p>
-            </div>
-
-            <!-- Google AdSense - Banner inferior -->
-            <div class="ad-container" style="margin: 30px 0; text-align: center; min-height: 100px;">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-XXXXXXXXXX"
-                     data-ad-slot="XXXXXXXXXX"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
             </div>
         </main>
 
@@ -177,7 +143,8 @@
                 <nav style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-color);">
                     <a href="/privacy-policy" style="color: var(--text-secondary); text-decoration: underline; margin-right: 15px;">Política de Privacidad</a>
                     <a href="/terms" style="color: var(--text-secondary); text-decoration: underline; margin-right: 15px;">Términos de Servicio</a>
-                    <a href="/contact" style="color: var(--text-secondary); text-decoration: underline;">Contacto</a>
+                    <a href="/contact" style="color: var(--text-secondary); text-decoration: underline; margin-right: 15px;">Contacto</a>
+                    <a href="/como-convertir-pdf" style="color: var(--text-secondary); text-decoration: underline;">Cómo convertir PDF</a>
                 </nav>
                 <p class="copyright">
                     © 2024 - PDF Simple Convert - Herramientas de Conversión Online
