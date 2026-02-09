@@ -1,13 +1,5 @@
 User-agent: *
 Allow: /
-Allow: /como-convertir-pdf
-Allow: /pdf-a-jpg
-Allow: /pdf-a-png
-Allow: /jpg-a-pdf
-Allow: /privacy-policy
-Allow: /terms
-Allow: /contact
 Disallow: /api/
-Disallow: /app/
 
 Sitemap: https://pdfsimpleconvert.com/sitemap.xml
