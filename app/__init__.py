@@ -82,13 +82,12 @@ def create_app():
     app.register_blueprint(jpg_to_pdf.bp)
     app.register_blueprint(sitemap.bp)
     
-    # Ruta para robots.txt
+    # Ruta para robots.txt (desde raíz del proyecto para evitar bloqueos)
     @app.route('/robots.txt')
     def robots_txt():
         from flask import send_from_directory
-        import os
         return send_from_directory(
-            os.path.join(base_dir, 'static'),
+            base_dir,
             'robots.txt',
             mimetype='text/plain'
         )
