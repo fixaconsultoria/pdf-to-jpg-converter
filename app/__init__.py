@@ -82,21 +82,19 @@ def create_app():
     app.register_blueprint(jpg_to_pdf.bp)
     app.register_blueprint(sitemap.bp)
     
-    # Ruta para robots.txt (desde raíz del proyecto para evitar bloqueos)
-    @app.route('/robots.txt')
-    def robots_txt():
-        from flask import send_from_directory, Response
-        import os
-        path = os.path.join(base_dir, 'robots.txt')
-        with open(path, 'r', encoding='utf-8') as f:
-            body = f.read()
-        r = Response(body, mimetype='text/plain')
-        # Evitar caché para que Google siempre reciba la versión actual
-        r.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
-        r.headers['Pragma'] = 'no-cache'
-        r.headers['Expires'] = '0'
-        return r
-    
+    # robots.txt DESACTIVADO: si existe archivo, Google a veces lo interpreta mal.
+    # Sin /robots.txt (404), Google permite rastrear todo por defecto.
+    # Para reactivar: descomenta el bloque siguiente y despliega.
+    # @app.route('/robots.txt')
+    # def robots_txt():
+    #     from flask import Response
+    #     path = os.path.join(base_dir, 'robots.txt')
+    #     with open(path, 'r', encoding='utf-8') as f:
+    #         body = f.read()
+    #     r = Response(body, mimetype='text/plain')
+    #     r.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+    #     return r
+
     # Ruta para ads.txt (requerido por Google AdSense)
     @app.route('/ads.txt')
     def ads_txt():
